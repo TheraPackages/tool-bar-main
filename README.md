@@ -1,20 +1,38 @@
-# Main Tool Bar package
+# Main Tool Bar package for Thera
+The package depend on  tool-bar package.
 
-Simple tool bar using [tool-bar](https://atom.io/packages/tool-bar) package.
+![](Main%20Tool%20Bar%20package%20for%20Thera/f9006cda71c76269a3c53adb9ea02cbe.png)
 
-![Main Tool Bar](http://f.cl.ly/items/3B3O471G3h3d0x0l0313/Screenshot-2014-10-22-11.37.54.png)
+You can add buttons to toolbar:
+* Menu:event handler for each menu option.
+* Button:a basic button.
+* State button:on state-feedback button
 
-# Buttons
+## Examples
+Add basic button
+```
+@toolBar.addButton
+      icon: 'email-variant'
+      callback: 'atom-live-server:start-3000'
+      tooltip: 'Run localhost port 3000...'
+      iconset: 'mdi'
+```
 
-* New File
-* Open...
-* Save
-* Find in Buffer
-* Replace in Buffer
-* Toggle Command Palette
-* Open Settings View
+Add menu
+```
+//todo
+```
 
-When in **dev mode** it adds two more buttons:
+Add state button
+```
+stop = @toolBar.addButton
+      icon: 'stop'
+      callback: 'thera-live-server:stop'
+      iconset: 'mdi'
+stop.element.setAttribute('disabled', true)
+```
 
-* Reload Window
-* Toggle Developer Tools
+## Documentation
+Todo list
+
+## License
