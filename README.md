@@ -36,3 +36,4 @@ stop.element.setAttribute('disabled', true)
 Todo list
 
 ## License
+[MTL](https://github.com/TheraPackages/tool-bar-main/blob/master/LICENSE.md)
