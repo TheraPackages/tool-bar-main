@@ -1,7 +1,7 @@
 # Main Tool Bar package for Thera
 The package depend on  tool-bar package.
 
-![](Main%20Tool%20Bar%20package%20for%20Thera/f9006cda71c76269a3c53adb9ea02cbe.png)
+![](https://gw.alicdn.com/tps/TB1jhBnPVXXXXXjapXXXXXXXXXX-1384-61.jpg)
 
 You can add buttons to toolbar:
 * Menu:event handler for each menu option.
