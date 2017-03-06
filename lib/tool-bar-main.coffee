@@ -65,7 +65,6 @@ module.exports =
       icon: 'play'
       id: 'thera-simulator-selector'
       menu:'runlist'
-      callback: 'atom-live-server:start-3000'
       tooltip: 'Run localhost port 3000...'
       iconset: 'mdi'
 
