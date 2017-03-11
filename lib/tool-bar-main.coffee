@@ -15,7 +15,7 @@ module.exports =
 
 
     @toolBar.addButton
-      icon: 'email-variant'
+      icon: 'email'
       callback: 'atom-live-server:start-3000'
       tooltip: 'Run localhost port 3000...'
       iconset: 'mdi'
@@ -24,8 +24,8 @@ module.exports =
 
     @toolBar.addButton
       icon: 'note-plus-outline'
-      callback: 'create-files:toggle'
-      tooltip: 'New file to project'
+      callback: 'application:new-file'
+      tooltip: 'New weex file'
       iconset: 'mdi'
 
     @toolBar.addButton
@@ -65,6 +65,7 @@ module.exports =
       icon: 'play'
       id: 'thera-simulator-selector'
       menu:'runlist'
+      callback: 'atom-live-server:start-3000'
       tooltip: 'Run localhost port 3000...'
       iconset: 'mdi'
 
@@ -83,22 +84,24 @@ module.exports =
       callback: 'find-and-replace:show'
       tooltip: 'Find in Buffer'
       iconset: 'ion'
-    @toolBar.addButton
-      icon: 'shuffle'
-      callback: 'find-and-replace:show-replace'
-      tooltip: 'Replace in Buffer'
-      iconset: 'ion'
+
 
     @toolBar.addSpacer()
 
     @toolBar.addButton
-      icon: 'trello'
+      icon: 'page-layout-sidebar-left'
+      callback: 'tree-view:toggle'
+      tooltip: 'Left view open&close'
+      iconset: 'mdi'
+
+    @toolBar.addButton
+      icon: 'page-layout-sidebar-right'
       callback: 'symbols-tree-view:toggle'
       tooltip: 'Right view open&close'
       iconset: 'mdi'
 
     @toolBar.addButton
-      icon: 'console'
+      icon: 'page-layout-footer'
       callback: 'console:toggle'
       tooltip: 'Console view open&close'
       iconset: 'mdi'
@@ -106,9 +109,9 @@ module.exports =
     @toolBar.addSpacer()
 
     @toolBar.addButton
-      icon: 'barcode-scan'
-      callback: 'thera-live-server:qrcode'
-      tooltip: 'link device'
+      icon: 'presentation-play'
+      callback: ''
+      tooltip: 'preview'
       iconset: 'mdi'
 
     if atom.inDevMode()
