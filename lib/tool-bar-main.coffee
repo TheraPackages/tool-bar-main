@@ -30,7 +30,7 @@ module.exports =
 
     @toolBar.addButton
       icon: 'folder-upload'
-      callback: 'application:open-file'
+      callback: 'create-files:toggle'
       tooltip: 'Open weex file from local'
       iconset: 'mdi'
 
