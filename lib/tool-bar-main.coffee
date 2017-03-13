@@ -24,13 +24,13 @@ module.exports =
 
     @toolBar.addButton
       icon: 'note-plus-outline'
-      callback: 'application:new-file'
+      callback: 'create-files:toggle'
       tooltip: 'New weex file'
       iconset: 'mdi'
 
     @toolBar.addButton
       icon: 'folder-upload'
-      callback: 'create-files:toggle'
+      callback: 'application:open-folder'
       tooltip: 'Open weex file from local'
       iconset: 'mdi'
 
