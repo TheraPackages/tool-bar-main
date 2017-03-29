@@ -81,7 +81,7 @@ module.exports =
 
     @toolBar.addButton
       icon: 'search'
-      callback: 'find-and-replace:show'
+      callback: 'project-find:show'
       tooltip: 'Find in Buffer'
       iconset: 'ion'
 
