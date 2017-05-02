@@ -43,19 +43,6 @@ module.exports =
     @toolBar.addSpacer()
 
     @toolBar.addButton
-      icon: 'play'
-      callback: 'thera-live-server:start'
-      tooltip: 'Run simulator'
-      iconset: 'mdi'
-
-    stop = @toolBar.addButton
-      icon: 'stop'
-      callback: 'thera-live-server:stop'
-      iconset: 'mdi'
-    stop.element.setAttribute('disabled', true)
-
-
-    @toolBar.addButton
       icon: 'bug'
       callback: 'thera-live-server:debug'
       tooltip: 'Debug weex'
@@ -71,7 +58,7 @@ module.exports =
 
     @toolBar.addButton
       icon: 'cellphone-link'
-      callback: 'thera-live-server:qrcode'
+      callback: 'thera-device-panel:show'
       tooltip: 'Add new device to device-list'
       iconset: 'mdi'
 
