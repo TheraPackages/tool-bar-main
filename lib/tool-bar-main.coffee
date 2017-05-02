@@ -43,9 +43,9 @@ module.exports =
     @toolBar.addSpacer()
 
     @toolBar.addButton
-      icon: 'bug'
-      callback: 'thera-live-server:debug'
-      tooltip: 'Debug weex'
+      icon: 'cellphone-link'
+      callback: 'thera-device-panel:show'
+      tooltip: 'Add new device to device-list'
       iconset: 'mdi'
 
     @toolBar.addThera
@@ -56,11 +56,13 @@ module.exports =
       tooltip: 'Run localhost port 3000...'
       iconset: 'mdi'
 
+
     @toolBar.addButton
-      icon: 'cellphone-link'
-      callback: 'thera-device-panel:show'
-      tooltip: 'Add new device to device-list'
+      icon: 'bug'
+      callback: 'thera-live-server:debug'
+      tooltip: 'Debug weex'
       iconset: 'mdi'
+
 
     @toolBar.addSpacer()
 
