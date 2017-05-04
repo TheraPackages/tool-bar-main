@@ -43,10 +43,10 @@ module.exports =
     @toolBar.addSpacer()
 
     @toolBar.addButton
-      icon: 'cellphone-link'
+      icon: 'ondemand_video'
       callback: 'thera-device-panel:show'
       tooltip: 'Add new device to device-list'
-      iconset: 'mdi'
+      iconset: 'material-icons'
 
     @toolBar.addThera
       icon: 'play'
