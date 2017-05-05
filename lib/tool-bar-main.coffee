@@ -43,7 +43,7 @@ module.exports =
     @toolBar.addSpacer()
 
     @toolBar.addButton
-      icon: 'ondemand_video'
+      icon: 'queue_play_next'
       callback: 'thera-device-panel:show'
       tooltip: 'Select devices to run'
       iconset: 'material-icons'
