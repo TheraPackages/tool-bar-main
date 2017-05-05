@@ -45,7 +45,7 @@ module.exports =
     @toolBar.addButton
       icon: 'ondemand_video'
       callback: 'thera-device-panel:show'
-      tooltip: 'Add new device to device-list'
+      tooltip: 'Select devices to run'
       iconset: 'material-icons'
 
     @toolBar.addThera
