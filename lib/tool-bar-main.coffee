@@ -47,6 +47,7 @@ module.exports =
       callback: 'thera-device-panel:show'
       tooltip: 'Select devices to run'
       iconset: 'material-icons'
+      id:'add-device-to-run-button'
 
     @toolBar.addThera
       icon: 'play'
