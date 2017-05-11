@@ -58,7 +58,7 @@ module.exports =
     @toolBar.addButton
       icon: 'refresh'
       callback: 'core:save'
-      tooltip: 'refresh all connected devices'
+      tooltip: 'Refresh page of all connected devices'
       iconset: 'mdi'
 
     @toolBar.addButton
@@ -102,10 +102,16 @@ module.exports =
     @toolBar.addSpacer()
 
     @toolBar.addButton
-      icon: 'presentation-play'
-      callback: ''
-      tooltip: 'preview'
-      iconset: 'mdi'
+      icon: 'cloud_upload'
+      webUrl: 'http://pre.oreo.alibaba-inc.com/temp/tempList.htm'
+      tooltip: 'Deploy code to oreo server'
+      iconset: 'material-icons'
+
+#    @toolBar.addButton
+#      icon: 'presentation-play'
+#      callback: ''
+#      tooltip: 'preview'
+#      iconset: 'mdi'
 
     if atom.inDevMode()
       @toolBar.addSpacer()
