@@ -1,3 +1,6 @@
+childProcess = require 'child_process'
+commandGetSsid = '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk \'/ SSID/ {print substr($0, index($0, $2))}\''
+
 module.exports =
   activate: (state) ->
     require('atom-package-deps').install('tool-bar-main')
@@ -6,6 +9,12 @@ module.exports =
     @toolBar?.removeItems()
 
   serialize: ->
+
+  isAliNetwork:()->
+    ssidRet = childProcess.execSync commandGetSsid
+    ssid = new TextDecoder("utf-8").decode(ssidRet).replace(/[\r\n]/g,"")
+    console.log('thera-get-ssid '+ ssid)
+    ssid == 'alibaba-inc'
 
   consumeToolBar: (toolBar) ->
     @toolBar = toolBar 'main-tool-bar'
@@ -101,11 +110,12 @@ module.exports =
 
     @toolBar.addSpacer()
 
-    @toolBar.addButton
-      icon: 'cloud_upload'
-      webUrl: 'http://pre.oreo.alibaba-inc.com/temp/tempList.htm'
-      tooltip: 'Deploy code to oreo server'
-      iconset: 'material-icons'
+    if @isAliNetwork()
+      @toolBar.addButton
+        icon: 'cloud_upload'
+        webUrl: 'http://pre.oreo.alibaba-inc.com/temp/tempList.htm'
+        tooltip: 'Deploy code to oreo server'
+        iconset: 'material-icons'
 
 #    @toolBar.addButton
 #      icon: 'presentation-play'
