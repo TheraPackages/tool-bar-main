@@ -50,13 +50,16 @@ module.exports =
       id:'add-device-to-run-button'
 
     @toolBar.addThera
-      icon: 'play'
       id: 'thera-simulator-selector'
       menu:'runlist'
       callback: 'atom-live-server:start-3000'
       tooltip: 'Run localhost port 3000...'
-      iconset: 'mdi'
 
+    @toolBar.addButton
+      icon: 'refresh'
+      callback: 'core:save'
+      tooltip: 'refresh all connected devices'
+      iconset: 'mdi'
 
     @toolBar.addButton
       icon: 'bug'
