@@ -1,5 +1,6 @@
 childProcess = require 'child_process'
 commandGetSsid = '/System/Library/PrivateFrameworks/Apple80211.framework/Versions/Current/Resources/airport -I | awk \'/ SSID/ {print substr($0, index($0, $2))}\''
+commandGetAliLangProfile = 'profiles -L'
 
 module.exports =
   activate: (state) ->
@@ -13,8 +14,15 @@ module.exports =
   isAliNetwork:()->
     ssidRet = childProcess.execSync commandGetSsid
     ssid = new TextDecoder("utf-8").decode(ssidRet).replace(/[\r\n]/g,"")
-    console.log('thera-get-ssid '+ ssid)
+    console.log('thera-network ssid '+ ssid)
     ssid == 'alibaba-inc'
+
+  hasAliLangProfile:()->
+    profiles = childProcess.execSync commandGetAliLangProfile
+    console.log('thera-network profiles'+ profiles)
+    aliLangRe = /com.alibaba.mdm.profile/;
+    aliLangRe.test(profiles)
+
 
   consumeToolBar: (toolBar) ->
     @toolBar = toolBar 'main-tool-bar'
@@ -110,7 +118,7 @@ module.exports =
 
     @toolBar.addSpacer()
 
-    if @isAliNetwork()
+    if @isAliNetwork() || @hasAliLangProfile()
       @toolBar.addButton
         icon: 'cloud_upload'
         webUrl: 'http://pre.oreo.alibaba-inc.com/temp/tempList.htm'
