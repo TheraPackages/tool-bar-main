@@ -23,7 +23,6 @@ module.exports =
     aliLangRe = /com.alibaba.mdm.profile/;
     aliLangRe.test(profiles)
 
-
   consumeToolBar: (toolBar) ->
     @toolBar = toolBar 'main-tool-bar'
 
@@ -62,7 +61,7 @@ module.exports =
     @toolBar.addButton
       icon: 'queue_play_next'
       callback: 'thera-device-panel:show'
-      tooltip: 'Select devices to run'
+      tooltip: 'Add devices to run'
       iconset: 'material-icons'
       id:'add-device-to-run-button'
 
@@ -72,11 +71,9 @@ module.exports =
       callback: 'atom-live-server:start-3000'
       tooltip: 'Run localhost port 3000...'
 
-    @toolBar.addButton
+    @toolBar.addRefreshButton
       icon: 'refresh'
-      callback: 'core:save'
       tooltip: 'Refresh page of all connected devices'
-      iconset: 'mdi'
 
     @toolBar.addButton
       icon: 'bug'
