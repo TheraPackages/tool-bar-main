@@ -14,12 +14,10 @@ module.exports =
   isAliNetwork:()->
     ssidRet = childProcess.execSync commandGetSsid
     ssid = new TextDecoder("utf-8").decode(ssidRet).replace(/[\r\n]/g,"")
-    console.log('thera-network ssid '+ ssid)
     ssid == 'alibaba-inc'
 
   hasAliLangProfile:()->
     profiles = childProcess.execSync commandGetAliLangProfile
-    console.log('thera-network profiles'+ profiles)
     aliLangRe = /com.alibaba.mdm.profile/;
     aliLangRe.test(profiles)
 
@@ -118,7 +116,7 @@ module.exports =
     if @isAliNetwork() || @hasAliLangProfile()
       @toolBar.addButton
         icon: 'cloud_upload'
-        webUrl: 'http://pre.oreo.alibaba-inc.com/temp/tempList.htm'
+        id:'deploy_js_file_button'
         tooltip: 'Deploy code to oreo server'
         iconset: 'material-icons'
 
