@@ -120,6 +120,13 @@ module.exports =
         tooltip: 'Deploy code to oreo server'
         iconset: 'material-icons'
 
+    if @isAliNetwork() || @hasAliLangProfile()
+      @toolBar.addButton
+        icon: 'upload'
+        id:'deploy_mock_file_button'
+        tooltip: 'Deploy mock data to server'
+        iconset: 'mdi'
+
 #    @toolBar.addButton
 #      icon: 'presentation-play'
 #      callback: ''
