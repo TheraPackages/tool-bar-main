@@ -12,11 +12,13 @@ module.exports =
   serialize: ->
 
   isAliNetwork:()->
+    return false if process.platform == "win32"
     ssidRet = childProcess.execSync commandGetSsid
     ssid = new TextDecoder("utf-8").decode(ssidRet).replace(/[\r\n]/g,"")
     ssid == 'alibaba-inc'
 
   hasAliLangProfile:()->
+    return false if process.platform == "win32"
     profiles = childProcess.execSync commandGetAliLangProfile
     aliLangRe = /com.alibaba.mdm.profile/;
     aliLangRe.test(profiles)
